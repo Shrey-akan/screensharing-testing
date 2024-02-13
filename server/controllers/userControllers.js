@@ -32,7 +32,7 @@ export const register = async (req, res) => {
     const accessToken = jwt.sign(
       { _id: user._id },
       process.env.JWT_ACCESS_SECRET,
-      { expiresIn: 15 * 60 }
+      { expiresIn: 15 * 24 * 60 * 60 }
     );
 
 
@@ -80,7 +80,7 @@ export const login = async (req, res) => {
       const accessToken = jwt.sign(
         { _id: refreshExists.userId },
         process.env.JWT_ACCESS_SECRET,
-        { expiresIn: 15 * 60 }
+        { expiresIn:  15 * 24 * 60 * 60 }
       );
 
       return res
