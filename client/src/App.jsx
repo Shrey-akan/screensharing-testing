@@ -20,7 +20,6 @@ const App = () => {
           <Routes>
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/join" element={<ScreenSharing/>}/>
             <Route path="/" element={<Home />} />
           </Routes>
           <ToastContainer position="top-left" />
