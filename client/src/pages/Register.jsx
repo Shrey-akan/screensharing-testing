@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { AppValues } from "../context";
+import { AppValues, server } from "../context";
 import { toast } from "react-toastify";
 import Cookies from "js-cookie";
+import axios from "axios";
 
 const Register = () => {
     const navigate = useNavigate()
@@ -15,7 +16,7 @@ const Register = () => {
     e.preventDefault();
 
     try {
-      const { data } = await axios.post(`${server}/api/v1/login`, {
+      const { data } = await axios.post(`${server}/api/v1/register`, {
         name,
         email,
         password,
